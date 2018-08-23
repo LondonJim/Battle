@@ -6,6 +6,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'features/web_helpers'
+require 'features/attack_and_next'
 
 Capybara.app = Battle
 

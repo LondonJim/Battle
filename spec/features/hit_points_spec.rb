@@ -1,9 +1,13 @@
 feature 'View hit points' do
+
   scenario 'see Player 2 hit points' do
-    visit('/')
-    fill_in :player_1_name, with: 'Finn the Human'
-    fill_in :player_2_name, with: 'The Lich'
-    click_button 'Submit'
-    expect(page).to have_content 'The Lich: 100HP'
+    sign_in_and_play
+    expect(page).to have_content 'Ice King: 100HP'
   end
+
+  scenario 'see Player 1 hit points' do
+    sign_in_and_play
+    expect(page).to have_content 'Jake the Dog: 100HP'
+  end
+
 end
