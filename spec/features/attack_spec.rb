@@ -1,5 +1,10 @@
 feature 'Attacking' do
 
+  before do
+    allow(Kernel).to receive(:rand).and_return(10)
+    @game = Game.instance
+  end
+
   scenario 'attack player 2' do
     sign_in_and_play
     click_button('ATTACK')
